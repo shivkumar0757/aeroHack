@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 
 <head>
@@ -25,17 +26,17 @@
     
     <h2 class="d-flex justify-content-center mb-5">Active Listings</h2>
 
-    <form action="#" method="post" >
+    <form action="{% url 'boiler_gen' %}" method="post" >
         {% csrf_token %}
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-primary active">
-              <input type="radio" name="options" id="option1" autocomplete="off" value="web" checked> Web Application
+            <label class="btn btn-primary active" id="web">
+              <input type="radio" name="app_type" autocomplete="off" value="web" checked> Web Application
             </label>
-            <label class="btn btn-primary">
-              <input type="radio" name="options" id="option2" autocomplete="off" value="mobile"> Mobile Application
+            <label class="btn btn-primary" id="mobile">
+              <input type="radio" name="app_type"  autocomplete="off" value="mobile"> Mobile Application
             </label>
-            <label class="btn btn-primary">
-              <input type="radio" name="options" id="option3" autocomplete="off" value="'desktop">  Desktop Application
+            <label class="btn btn-primary" id="desktop">
+              <input type="radio" name="app_type"  autocomplete="off" value="'desktop">  Desktop Application
             </label>
           </div>
           <!-- Select FrontEnd or Backend-->
@@ -51,7 +52,8 @@
             </div>
 
             <!-- Partion in two parts-->
-            <div class="row">
+            <div class="row mt-3">
+              <!-- FrontEnd List -->
                 <div class="col-5 border-right" id="front-list">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
@@ -61,20 +63,13 @@
                       </div>
                       
                 </div>
-                <div class="col ml-3" id=" backend-list">
-                  
-                  
+                <!-- Backend list -->
+                <div class="col ml-3" id="backend-list">
+                  dd
                 </div>
               </div>
 
-          <!-- <div id="frm-web">
-              Form web
-          </div>
-          <div id="frm-mob">
-            Form Mobile
-        </div>
-        <div id="frm-dsk">
-            Form Desktop -->
+          
             
                 
     
@@ -86,7 +81,7 @@
 
 
 
-<!-- <script src="{% static 'boiler/inbox.js' %}"></script> -->
+<script src="{% static 'boiler/form.js' %}"></script>
 </body>
 
 
