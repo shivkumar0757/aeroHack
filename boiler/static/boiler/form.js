@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#web').addEventListener('click', () => listUpdate('web'));
     document.querySelector('#mobile').addEventListener('click', () => listUpdate('mobile'));
     document.querySelector('#desktop').addEventListener('click', () => listUpdate('desktop'));
+    // document.querySelector('#compose-form').addEventListener('submit',SubmitEvent);
   });
 
   function listUpdate(name)
