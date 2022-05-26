@@ -37,7 +37,7 @@ import os
 
 def get_file(request):
     cwd=os.getcwd()
-    files_path = cwd+"./boiler/temps/flask-react-boilerplate-master"
+    files_path = cwd+"/boiler/temps/flask-react-boilerplate-master"
     print('----------------')
     print(os.getcwd())
     print(os.listdir('./boiler/temps') )
