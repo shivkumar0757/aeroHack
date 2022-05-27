@@ -10,8 +10,8 @@ var lists={
     }
     ,
     'desktop': {
-        'frontend': ['electron'],
-        'backend': ['Django','Flask','SpringBoot']
+        'frontend': ['Electron'],
+        'backend': ['Django','Flask','SpringBoot',"Node"]
     }
 }
 document.addEventListener('DOMContentLoaded', function() {

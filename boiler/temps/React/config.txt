@@ -1,0 +1,2 @@
+to connect with different url,
+ const base_url  value in src/app.js 
