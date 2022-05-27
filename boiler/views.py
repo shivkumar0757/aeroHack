@@ -18,7 +18,7 @@ def boiler_gen(request):
     print(type(myJson))
     print(myJson['frontend_opt'])
 
-    combinations={'React':["Flask","SpringBoot","Node","Django"],    "Vue":["Flask","SpringBoot","Node","Django"],    "Angular":["Flask","SpringBoot","Node","Django"]}
+    combinations={'React':["Flask","SpringBoot","Node","Django"],    "Vue":["Flask","SpringBoot","Node","Django"],    "Angular":["Flask","SpringBoot","Node","Django"],  "electron":["Node"]}
 
     if myJson['frontend_opt'] in combinations and myJson['backend_opt'] in combinations[myJson['frontend_opt']]:
         path_to_zip=get_file(request,myJson['frontend_opt'],myJson['backend_opt'])
@@ -62,6 +62,8 @@ def get_file(request,front_end,back_end):
     cwd+="./boiler/temps/"
 
     folders = [ cwd+front_end,cwd+back_end]
+    
+    cwd=os.getcwd()+"./boiler/integrations/"
     zipit(folders,cwd+front_end+"_"+back_end+".zip")
 
     # listfiles=[cwd+ front_end+".txt",cwd+back_end+".txt"]
