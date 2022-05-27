@@ -40,25 +40,43 @@ from wsgiref.util import FileWrapper
 import os
 import zipfile
 
+
+def zipit(folders, zip_filename):
+    zip_file = zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED)
+
+    for folder in folders:
+        for dirpath, dirnames, filenames in os.walk(folder):
+            for filename in filenames:
+                zip_file.write(
+                    os.path.join(dirpath, filename),
+                    os.path.relpath(os.path.join(dirpath, filename), os.path.join(folders[0], '../..')))
+
+    zip_file.close()
+
+
 def get_file(request,front_end,back_end):
     cwd=os.getcwd()
     new_path=cwd+"./boiler/temps/"+front_end+"_"+back_end+".zip"
     print(new_path)
     print("hahahahahah")
     cwd+="./boiler/temps/"
-    listfiles=[cwd+ front_end+".txt",cwd+back_end+".txt"]
-    with zipfile.ZipFile(front_end+"_"+back_end+".zip",'w') as zip:
-        for file in listfiles:
-            zip.write(file,compress_type=zipfile.ZIP_DEFLATED)
-    
-    # return os.getcwd()+"./"+front_end+"_"+back_end+".zip"
 
-    cwd=os.getcwd()
-    files_path = cwd+"./boiler/temps/flask-react-boilerplate-master"
-    print('----------------')
-    print(os.getcwd())
-    print(os.listdir('./boiler/temps') )
-    path_to_zip = make_archive(files_path, "zip", files_path)
-    print(path_to_zip)
-    print("hahahaha")
-    return path_to_zip 
+    folders = [ cwd+front_end,cwd+back_end]
+    zipit(folders,cwd+front_end+"_"+back_end+".zip")
+
+    # listfiles=[cwd+ front_end+".txt",cwd+back_end+".txt"]
+    # with zipfile.ZipFile(front_end+"_"+back_end+".zip",'w') as zip:
+    #     for file in listfiles:
+    #         zip.write(file,compress_type=zipfile.ZIP_DEFLATED)
+    
+    return cwd+front_end+"_"+back_end+".zip"
+
+    # cwd=os.getcwd()
+    # files_path = cwd+"./boiler/temps/flask-react-boilerplate-master"
+    # print('----------------')
+    # print(os.getcwd())
+    # print(os.listdir('./boiler/temps') )
+    # path_to_zip = make_archive(files_path, "zip", files_path)
+    # print(path_to_zip)
+    # print("hahahaha")
+    # return path_to_zip 

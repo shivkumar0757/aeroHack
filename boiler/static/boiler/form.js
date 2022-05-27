@@ -10,7 +10,7 @@ var lists={
     }
     ,
     'desktop': {
-        'frontend': ['electron'],
+        'frontend': ['Electron'],
         'backend': ['Django','Flask','SpringBoot']
     }
 }
