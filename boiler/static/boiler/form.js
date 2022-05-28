@@ -2,7 +2,7 @@
 var lists={
     'web': {
         'frontend': ['React', 'Vue', 'Angular'],
-        'backend': ['Django','Flask','SpringBoot','Node']
+        'backend': ['Django','Flask','SpringBoot','Node','KuchBhi']
     },
     'mobile': {
         'frontend': ['React Native'],
