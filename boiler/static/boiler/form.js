@@ -6,7 +6,7 @@ var lists={
     },
     'mobile': {
         'frontend': ['React Native'],
-        'backend': ['Django','FireBase','SpringBoot']
+        'backend': ['Django','FireBase','SpringBoot','Node']
     }
     ,
     'desktop': {
