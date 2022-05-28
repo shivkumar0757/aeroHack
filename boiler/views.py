@@ -18,7 +18,8 @@ def boiler_gen(request):
     print(type(myJson))
     print(myJson['frontend_opt'])
 
-    combinations={'React':["Flask","SpringBoot","Node","Django"],    "Vue":["Flask","SpringBoot","Node","Django"],    "Angular":["Flask","SpringBoot","Node","Django"],  "electron":["Node"]}
+    combinations={'React':["Flask","SpringBoot","Node","Django"],    "Vue":["Flask","SpringBoot","Node","Django"],    "Angular":["Flask","SpringBoot","Node","Django"],  "Electron":["Node"],
+    "React Native":"Node"}
 
     if myJson['frontend_opt'] in combinations and myJson['backend_opt'] in combinations[myJson['frontend_opt']]:
         path_to_zip=get_file(request,myJson['frontend_opt'],myJson['backend_opt'])
