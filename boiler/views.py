@@ -58,7 +58,7 @@ def get_file(request,front_end,back_end):
     cwd=os.getcwd()
     new_path=cwd+"/boiler/temps/"+front_end+"_"+back_end+".zip"
     print(new_path)
-    print("hahahahahah")
+    # print("hahahahahah")
 
     cwd+="/boiler/temps/"
 
